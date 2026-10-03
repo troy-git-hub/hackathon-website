@@ -403,6 +403,94 @@ h2{font-size:38px;font-weight:900;line-height:1.18;letter-spacing:-.3px}
 .faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
 .faq-a p{color:var(--text-sub);font-size:15px;line-height:1.8}
 
+/* ═══ how to use (usage) ═══ */
+.usage{background:var(--bg-warm)}
+.usage-steps{margin-top:56px;max-width:780px;position:relative}
+.usage-steps::before{
+  content:'';position:absolute;left:23px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(to bottom,var(--amber),var(--amber-glow) 60%,transparent);
+}
+.ustep{display:flex;gap:24px;position:relative;padding:0 0 46px}
+.ustep:last-child{padding-bottom:0}
+.unum{
+  flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:16px;
+  background:var(--surface);border:2px solid var(--amber);color:var(--amber);
+  position:relative;z-index:1;
+}
+.ustep h4{font-size:18px;font-weight:700;margin-bottom:7px}
+.ustep p{font-size:14.5px;color:var(--text-sub);line-height:1.75}
+.kbd{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  padding:2px 8px;border-radius:6px;background:var(--surface-2);
+  border:1px solid var(--border);color:var(--text-sub);margin:0 2px;
+}
+.ustep .hint{margin-top:8px;font-size:12.5px;color:var(--text-muted)}
+.ustep .subs{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.ustep .sub{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:10px;padding:12px 16px;font-size:13.5px;color:var(--text-sub);line-height:1.6;
+}
+.ustep .sub b{color:var(--text)}
+.ustep .sub .arr{color:var(--amber);flex:none;font-family:"IBM Plex Mono",monospace;font-size:13px;margin-top:1px}
+.keymap{
+  margin-top:40px;background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:var(--radius);padding:28px 30px;
+}
+.keymap h4{font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.keymap h4 .kb-ic{font-size:18px}
+.keymap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.keymap-item{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 16px;border-radius:10px;background:var(--bg-warm);
+  border:1px solid var(--border-soft);font-size:13.5px;color:var(--text-sub);
+}
+.keymap-item .keys{flex:none;display:flex;gap:5px}
+.keymap-item .keys .k{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  padding:4px 9px;border-radius:6px;background:var(--surface-2);
+  border:1px solid var(--border);border-bottom-width:2px;color:var(--text);
+}
+.keymap-item .desc{color:var(--text-sub)}
+.keymap-item .desc b{color:var(--text);font-weight:600}
+@media(max-width:640px){.keymap-grid{grid-template-columns:1fr}}
+
+/* ═══ download ═══ */
+.download{
+  text-align:center;padding:110px 0;position:relative;overflow:hidden;
+}
+.download-bg{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 60% at 50% 40%, var(--amber-glow) 0%, transparent 70%);
+}
+.download .content{position:relative;z-index:2}
+.dl-card{
+  max-width:640px;margin:48px auto 0;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 44px;text-align:left;
+}
+.dl-row{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--border-soft)}
+.dl-row:last-child{border-bottom:none}
+.dl-icon{
+  flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:var(--amber-glow);color:var(--amber);font-size:21px;
+}
+.dl-row h4{font-size:16px;font-weight:700}
+.dl-row p{font-size:13px;color:var(--text-muted);margin-top:2px}
+.dl-row .meta{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--text-muted);white-space:nowrap}
+.btn-download{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:17px 44px;border-radius:14px;font-size:17px;font-weight:800;
+  background:var(--amber);color:#121318;
+  transition:transform .2s,box-shadow .2s;
+  margin-top:40px;
+}
+.btn-download:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(242,169,59,.32)}
+.btn-download .arrow{margin-left:2px;transition:transform .2s}
+.btn-download:hover .arrow{transform:translateX(3px)}
+.dl-note{margin-top:18px;font-size:12.5px;color:var(--text-muted)}
+
 /* ═══ final cta ═══ */
 .final{
   text-align:center;padding:120px 0 100px;
@@ -463,11 +551,11 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
       <a href="#moment">痛点</a>
       <a href="#flow">原理</a>
       <a href="#features">功能</a>
+      <a href="#usage">怎么用</a>
       <a href="#showcase">产品</a>
-      <a href="#tech">技术</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-cta" href="#features">开始了解</a>
+    <a class="nav-cta" href="#download">免费下载</a>
     <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -475,9 +563,10 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
   <a href="#moment">痛点</a>
   <a href="#flow">原理</a>
   <a href="#features">功能</a>
+  <a href="#usage">怎么用</a>
   <a href="#showcase">产品</a>
-  <a href="#tech">技术</a>
   <a href="#faq">FAQ</a>
+  <a href="#download">免费下载</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -747,6 +836,90 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
   <path class="w2" d="M0,28 C150,12 300,44 590,28 S1030,12 1180,28"/>
 </svg>
 
+<!-- ═══════════ HOW TO USE ═══════════ -->
+<section id="usage" class="usage sec-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Getting Started</div>
+      <h2>怎么用？从零上手</h2>
+      <p class="sec-sub">没有复杂的新手引导也没关系，照着下面四步走一遍，三分钟就能开始第一次「掉队急救」。</p>
+    </div>
+    <div class="usage-steps">
+      <div class="ustep reveal">
+        <div class="unum">1</div>
+        <div>
+          <h4>安装并启动 Echo</h4>
+          <p>从下方「免费下载」拿到 Windows 安装包，双击一路下一步。装完从桌面或开始菜单启动 Echo。</p>
+          <div class="subs">
+            <div class="sub"><span class="arr">→</span><span><b>第一次启动会填资料：</b>几道题（怎么称呼、在学什么、学习目标），存成本地 profile，之后启动自动跳过。关掉不填就不会进入主界面。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>首次运行加载模型：</b>自动加载内置的 Whisper 转写模型（约 480MB，随安装包分发，不联网下载）。稍等片刻即可。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>没配 API key 也能用：</b>没填 DeepSeek key 时自动退化为离线规则，界面照常可用；填了 key 才有完整的 AI 断点分析。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ustep reveal">
+        <div class="unum">2</div>
+        <div>
+          <h4>打开网课，Echo 自动开始听</h4>
+          <p>正常打开腾讯会议 / Zoom / B 站 / 录播课，Echo 在后台自动抓取电脑正在播放的声音，实时转写并每 30 秒左右切出一个知识点。你什么都不用做，继续听课就行。</p>
+          <div class="subs">
+            <div class="sub"><span class="arr">→</span><span><b>默认抓「系统声音」：</b>电脑放什么它就听什么，戴耳机也不影响。想改成听麦克风（比如线下课自己对着电脑），托盘右键 → 设置里改 <span class="kbd">ECHO_SOURCE=mic</span>。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>怎么知道它在工作：</b>主窗口会显示「老师正在讲 XX」和实时转写文字，声纹条跟着老师声音起伏；桌面宠物猫的表情也会随课堂变化。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ustep reveal">
+        <div class="unum">3</div>
+        <div>
+          <h4>没跟上？点一下「我掉队了」</h4>
+          <p>主窗口有三个按钮，随时点击反馈你的状态：</p>
+          <div class="subs">
+            <div class="sub"><span class="arr">✓</span><span><b>跟上了：</b>标记当前知识点已掌握，时间轴节点变绿。</span></div>
+            <div class="sub"><span class="arr">?</span><span><b>有点懵：</b>标记当前知识点存疑，节点变黄，先记着不打断听课。</span></div>
+            <div class="sub"><span class="arr">!</span><span><b>我掉队了：</b>核心动作。Echo 回看最近 5 分钟转写 + 时间轴 + 你的反馈，定位你从哪一步开始没听懂，输出断点位置、缺失的那一步、为什么卡，并用 30 秒把缺失步骤补上。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>快捷键：</b><span class="kbd">Ctrl+Alt+L</span> 直接掉队（被占用时自动换 K / J / F9），听课不用伸手摸鼠标。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>补完继续听：</b>断点页看完点「补上了，继续听课」，窗口缩回悬浮态，无缝回到课堂。</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ustep reveal">
+        <div class="unum">4</div>
+        <div>
+          <h4>下课看「回响」，卡点自动进错题本</h4>
+          <p>课程结束点「结束」，Echo 生成这节课的掌握度地图：一段话总结这节课讲了什么、时长 / 知识点数 / 转写字数、每个知识点 ✓⚠! 状态，以及掉队点一路追溯到该复习的前置。</p>
+          <div class="subs">
+            <div class="sub"><span class="arr">→</span><span><b>错题本自动沉淀：</b>这节课所有掉队点按知识点收进错题本，重启后主页能回看、标掌握，不用手动整理。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>AI 出题巩固：</b>照着你的错题让 DeepSeek 出选择题 + 简答题，带答案和解析；离线时也有兜底题。</span></div>
+            <div class="sub"><span class="arr">→</span><span><b>讲给 Echo 听：</b>费曼式自测，不直接给答案，先听你讲再追问薄弱处——能讲出来才是真懂了。</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="keymap reveal">
+      <h4><span class="kb-ic">⌨</span>快捷键速查</h4>
+      <div class="keymap-grid">
+        <div class="keymap-item">
+          <div class="keys"><span class="k">Ctrl</span><span class="k">Alt</span><span class="k">L</span></div>
+          <div class="desc"><b>我掉队了</b>（占用时换 K / J / F9）</div>
+        </div>
+        <div class="keymap-item">
+          <div class="keys"><span class="k">Ctrl</span><span class="k">Alt</span><span class="k">E</span></div>
+          <div class="desc"><b>显示 / 隐藏</b> Echo 悬浮窗</div>
+        </div>
+        <div class="keymap-item">
+          <div class="keys"><span class="k">Ctrl</span><span class="k">Alt</span><span class="k">Q</span></div>
+          <div class="desc"><b>圈一下问 AI</b>：圈画截图问视觉模型</div>
+        </div>
+        <div class="keymap-item">
+          <div class="keys"><span class="k">✓</span><span class="k">?</span><span class="k">!</span></div>
+          <div class="desc"><b>课堂反馈</b>：跟上 / 有点懵 / 掉队</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ SHOWCASE ═══════════ -->
 <section id="showcase" class="sec-pad">
   <div class="wrap">
@@ -841,6 +1014,38 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
   </div>
 </section>
 
+<!-- ═══════════ DOWNLOAD ═══════════ -->
+<section id="download" class="download">
+  <div class="download-bg"></div>
+  <div class="wrap content reveal">
+    <div class="sec-eyebrow" style="text-align:center">Download</div>
+    <h2>现在就把 Echo 带回家</h2>
+    <p class="sec-sub" style="margin-left:auto;margin-right:auto">Windows 10 / 11 · 免费下载 · 本地模型离线可用</p>
+    <div class="dl-card">
+      <div class="dl-row">
+        <div class="dl-icon">⬇</div>
+        <div>
+          <h4>Echo 安装包</h4>
+          <p>最新版 · 内置 Whisper 转写模型</p>
+        </div>
+        <div class="meta">Windows</div>
+      </div>
+      <div class="dl-row">
+        <div class="dl-icon">📦</div>
+        <div>
+          <h4>GitHub Releases</h4>
+          <p>历史版本 · 更新日志 · 校验信息</p>
+        </div>
+        <div class="meta">所有版本</div>
+      </div>
+    </div>
+    <a class="btn-download" href="https://github.com/troy-git-hub/hackathon/releases" target="_blank" rel="noopener">
+      前往 GitHub Releases 下载 <span class="arrow">→</span>
+    </a>
+    <p class="dl-note">下载地址：github.com/troy-git-hub/hackathon/releases</p>
+  </div>
+</section>
+
 <!-- ═══════════ FINAL CTA ═══════════ -->
 <section class="final">
   <div class="final-bg"></div>
@@ -849,8 +1054,8 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
     <h2>别让一个没听懂的点，<br>浪费你一整节课</h2>
     <p>Echo —— 网课里的 AI 学习副驾驶。实时听课、精准断点、闭环复习，让每一节网课都值得。</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#flow">看看 Echo 怎么工作</a>
-      <a class="btn btn-ghost" href="#features">全部功能</a>
+      <a class="btn btn-primary" href="#download">免费下载 Echo</a>
+      <a class="btn btn-ghost" href="#usage">看看怎么用</a>
     </div>
   </div>
 </section>
@@ -863,7 +1068,8 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
       <a href="#moment">痛点</a>
       <a href="#flow">原理</a>
       <a href="#features">功能</a>
-      <a href="#tech">技术</a>
+      <a href="#usage">怎么用</a>
+      <a href="#download">下载</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="footer-meta">Echo Team · 2026 黑客松 · troy-git-hub/hackathon-website</div>
