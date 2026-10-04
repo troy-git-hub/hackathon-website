@@ -456,6 +456,23 @@ h2{font-size:38px;font-weight:900;line-height:1.18;letter-spacing:-.3px}
 .keymap-item .desc b{color:var(--text);font-weight:600}
 @media(max-width:640px){.keymap-grid{grid-template-columns:1fr}}
 
+.ucard{
+  background:var(--surface);border:1px solid var(--border-soft);
+  border-radius:var(--radius);padding:28px 30px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.ucard .uc-icon{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:var(--amber-glow);color:var(--amber);font-size:20px;
+}
+.ucard h4{font-size:17px;font-weight:700}
+.ucard ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.ucard li{font-size:13.5px;color:var(--text-sub);line-height:1.7;padding-left:18px;position:relative}
+.ucard li::before{content:"·";position:absolute;left:0;color:var(--amber);font-weight:900;font-size:20px;line-height:1}
+.ucard li b{color:var(--text)}
+.use-cards{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:760px){.use-cards{grid-template-columns:1fr}}
+
 /* ═══ download ═══ */
 .download{
   text-align:center;padding:110px 0;position:relative;overflow:hidden;
@@ -555,18 +572,18 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
       <a href="#showcase">产品</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a class="nav-cta" href="https://github.com/troy-git-hub/hackathon/releases" target="_blank" rel="noopener">免费下载</a>
+    <a class="nav-cta" href="https://github.com/troy-git-hub/hackathon/releases/download/v2.1/Echo-Setup-2.1.exe">免费下载</a>
     <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-panel" id="mobilePanel">
-  <a href="#moment">痛点</a>
-  <a href="#flow">原理</a>
-  <a href="#features">功能</a>
-  <a href="#usage">怎么用</a>
-  <a href="#showcase">产品</a>
-  <a href="#faq">FAQ</a>
-  <a href="#download">免费下载</a>
+    <a href="#moment">痛点</a>
+    <a href="#flow">原理</a>
+    <a href="#features">功能</a>
+    <a href="#usage">怎么用</a>
+    <a href="#showcase">产品</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://github.com/troy-git-hub/hackathon/releases/download/v2.1/Echo-Setup-2.1.exe">免费下载</a>
 </div>
 
 <!-- ═══════════ HERO ═══════════ -->
@@ -917,6 +934,36 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
         </div>
       </div>
     </div>
+
+    <div class="use-cards reveal">
+      <div class="ucard">
+        <div class="uc-icon">⚙</div>
+        <h4>常用设置</h4>
+        <ul>
+          <li><b>API Key：</b>托盘右键 → 设置 → 填 DeepSeek API key，AI 断点更准；不填也能用。</li>
+          <li><b>音频来源：</b><span class="mono">ECHO_SOURCE=system</span> 抓电脑声音；<span class="mono">mic</span> 抓麦克风。</li>
+          <li><b>Whisper 线程：</b>内存不够报 mkl_malloc 时，把 <span class="mono">ECHO_WHISPER_THREADS</span> 降到 2 或 1。</li>
+        </ul>
+      </div>
+      <div class="ucard">
+        <div class="uc-icon">🛠</div>
+        <h4>常见问题</h4>
+        <ul>
+          <li><b>没声音/转写为空：</b>检查是否在播放音频，且 Echo 托盘里显示的是「系统声音」。</li>
+          <li><b>AI 分析慢或失败：</b>检查网络，或 DeepSeek API key 是否有效；超时后会自动走规则兜底。</li>
+          <li><b>窗口找不到了：</b>按 <span class="kbd">Ctrl+Alt+E</span> 显示 / 隐藏，或在托盘右键唤出。</li>
+        </ul>
+      </div>
+      <div class="ucard">
+        <div class="uc-icon">💡</div>
+        <h4>用好 Echo 的小技巧</h4>
+        <ul>
+          <li>听课时勤点反馈，时间轴越准，断点定位越准。</li>
+          <li>「有点懵」不要立刻点「掉队」，先标记，等老师再讲两步还听不懂再点。</li>
+          <li>下课后先去错题本把「!」标成「已掌握」，AI 才会更好判断你的真实水平。</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1039,10 +1086,10 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
         <div class="meta">所有版本</div>
       </div>
     </div>
-    <a class="btn-download" href="https://github.com/troy-git-hub/hackathon/releases" target="_blank" rel="noopener">
-      前往 GitHub Releases 下载 <span class="arrow">→</span>
+    <a class="btn-download" href="https://github.com/troy-git-hub/hackathon/releases/download/v2.1/Echo-Setup-2.1.exe" download>
+      下载 Echo 安装包 <span class="arrow">→</span>
     </a>
-    <p class="dl-note">下载地址：github.com/troy-git-hub/hackathon/releases</p>
+    <p class="dl-note">Windows 10 / 11 · 安装包大小约 105MB · 也可查看<a href="https://github.com/troy-git-hub/hackathon/releases" target="_blank" rel="noopener">所有版本</a></p>
   </div>
 </section>
 
@@ -1054,7 +1101,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;background:var(--bg-war
     <h2>别让一个没听懂的点，<br>浪费你一整节课</h2>
     <p>Echo —— 网课里的 AI 学习副驾驶。实时听课、精准断点、闭环复习，让每一节网课都值得。</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="https://github.com/troy-git-hub/hackathon/releases" target="_blank" rel="noopener">免费下载 Echo</a>
+      <a class="btn btn-primary" href="https://github.com/troy-git-hub/hackathon/releases/download/v2.1/Echo-Setup-2.1.exe">免费下载 Echo</a>
       <a class="btn btn-ghost" href="#usage">看看怎么用</a>
     </div>
   </div>
